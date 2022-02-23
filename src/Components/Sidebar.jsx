@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const SidebarWrapper  = styled.div`
   flex: 1;
   border: 1px solid #ccc;
-  height: 90vh;
+  height: calc(100vh - 55px);
 `;
 
 const Title = styled.h2`
@@ -41,7 +41,7 @@ const Sidebar = () => {
           <SidebarItem> <TrendingUp /> Sales </SidebarItem>
         </SidebarList>
       </SidebarMenu>
-
+ 
       <SidebarMenu>
         <Title>Quick Menu</Title>
         <SidebarList>
