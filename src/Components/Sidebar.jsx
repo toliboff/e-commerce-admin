@@ -1,8 +1,90 @@
+import { AttachMoneyOutlined, ForumOutlined, LineStyle, MailOutline, MessageOutlined, PersonOutline, ReportOutlined, SignalCellularAltOutlined, StorefrontOutlined, Timeline, TrendingUp, WorkOutlineOutlined } from '@mui/icons-material';
 import React from 'react'
+import styled from 'styled-components';
+
+const SidebarWrapper  = styled.div`
+  flex: 1;
+  border: 1px solid #ccc;
+  height: 90vh;
+`;
+
+const Title = styled.h2`
+  font-size: 18px;
+  color: #444;
+`
+const SidebarMenu = styled.div`
+  margin-bottom: 15px;
+`
+const SidebarList = styled.ul`
+  list-style: none;
+  padding-left: 10px;
+`
+const SidebarItem = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+`
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <SidebarWrapper>
+      <SidebarMenu>
+        <Title>Dashboard</Title>
+        <SidebarList>
+          <SidebarItem> <LineStyle /> Home </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <Timeline /> Analytics </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <TrendingUp /> Sales </SidebarItem>
+        </SidebarList>
+      </SidebarMenu>
+
+      <SidebarMenu>
+        <Title>Quick Menu</Title>
+        <SidebarList>
+          <SidebarItem> <PersonOutline /> Users </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <StorefrontOutlined /> Products </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <AttachMoneyOutlined /> Transactions </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <SignalCellularAltOutlined /> Reports </SidebarItem>
+        </SidebarList>
+      </SidebarMenu>
+
+      <SidebarMenu>
+        <Title>Notifications</Title>
+        <SidebarList>
+          <SidebarItem> <MailOutline /> Mail </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <ForumOutlined /> Feedback </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <MessageOutlined /> Messages </SidebarItem>
+        </SidebarList>
+      </SidebarMenu>
+
+      <SidebarMenu>
+        <Title>Staff</Title>
+        <SidebarList>
+          <SidebarItem> <WorkOutlineOutlined /> Manage </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <Timeline /> Analytics </SidebarItem>
+        </SidebarList>
+        <SidebarList>
+          <SidebarItem> <ReportOutlined /> Reports </SidebarItem>
+        </SidebarList>
+      </SidebarMenu>
+
+    </SidebarWrapper>
   )
 }
 
