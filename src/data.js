@@ -84,3 +84,27 @@ export const transactions = [
     status: 'Approved'
   },
 ];
+
+export const userRows = [
+  { id: 1,
+    username: 'Julia Roberts',
+    avatar: 'https://t4.ftcdn.net/jpg/02/78/70/99/360_F_278709964_PhS3MsOE9udVYb5VCin1xCQJlm3HFb9V.jpg',
+    email: 'julia@email.com',
+    status: 'active',
+    transaction: 1250
+   }, 
+  { id: 2,
+    username: 'Nicole Kidman',
+    avatar: 'https://t4.ftcdn.net/jpg/02/78/70/99/360_F_278709964_PhS3MsOE9udVYb5VCin1xCQJlm3HFb9V.jpg',
+    email: 'nicole@email.com',
+    status: 'active',
+    transaction: 1250
+   }, 
+  { id: 3,
+    username: 'Scarlett Johansson',
+    avatar: 'https://t4.ftcdn.net/jpg/02/78/70/99/360_F_278709964_PhS3MsOE9udVYb5VCin1xCQJlm3HFb9V.jpg',
+    email: 'scarlet@email.com',
+    status: 'active',
+    transaction: 1250
+   }, 
+];
