@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import FeaturedInfo from '../Components/FeaturedInfo';
 
 const Container = styled.div`
-  background #ccc;
-  flex: 1;
+  flex: 4;
+  padding: 10px;
 `;
 
 const Home = () => {

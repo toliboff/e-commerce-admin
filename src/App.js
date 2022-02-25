@@ -1,7 +1,8 @@
-import Topbar from "./Components/topbar/Topbar";
+import Topbar from "./Components/Topbar";
 import styled  from 'styled-components';
 import Sidebar from "./Components/Sidebar";
 import Content from "./Components/Content";
+import Home from "./pages/Home";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ function App() {
       <Topbar />
       <Container>
         <Sidebar />
-        <Content />
+        <Home />
       </Container>
     </div>
   );

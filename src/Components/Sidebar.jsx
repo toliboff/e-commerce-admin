@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const SidebarWrapper  = styled.div`
   flex: 1;
-  border: 1px solid #ccc;
   height: calc(100vh - 55px);
 `;
 
