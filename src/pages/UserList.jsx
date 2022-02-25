@@ -5,6 +5,7 @@ import { Button, IconButton } from '@mui/material';
 import { Delete, DeleteOutline, Edit } from '@mui/icons-material';
 import { userRows } from '../data';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
 const Container = styled.div`
@@ -19,7 +20,14 @@ const UserImage = styled.img`
   margin-right: 15px;
 `;
 
-const rows: GridRowsProp = userRows;
+
+
+const UserList = () => {
+  const [users, setUsers] = useState(userRows)
+  const handleDelete = (id) => {
+    setUsers(state => state.filter(user => user.id !== id))
+  }
+  const rows: GridRowsProp = users;
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'id', width: 70 },
@@ -37,12 +45,11 @@ const columns: GridColDef[] = [
       </IconButton> 
     </Link>
     <IconButton color="secondary">
-      <DeleteOutline />
+      <DeleteOutline onClick={()=>handleDelete(params.row.id)}/>
     </IconButton >
   </> },
 ];
 
-const UserList = () => {
   return (
     <Container>
       <DataGrid rows={rows} columns={columns} checkboxSelection disableSelectionOnClick/>
