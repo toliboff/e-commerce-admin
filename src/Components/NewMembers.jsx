@@ -17,7 +17,7 @@ const Title = styled.h2`
 const MemberWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 25px 0;
 `;
 const MemberImage = styled.img`
   width: 40px;

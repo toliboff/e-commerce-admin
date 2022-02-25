@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import FeaturedInfo from '../Components/FeaturedInfo';
 import Chart from '../Components/Chart';
-import { members, userData } from '../data';
+import { members, transactions, userData } from '../data';
 import NewMembers from '../Components/NewMembers';
 import LatestTransactions from '../Components/LatestTransactions';
 
@@ -23,7 +23,7 @@ const Home = () => {
       <Chart data={userData} dataKey='uv' columnName='name' />
       <Widgets>
         <NewMembers members={members}/>
-        <LatestTransactions />
+        <LatestTransactions transactions={transactions}/>
       </Widgets>
     </Container>
   )

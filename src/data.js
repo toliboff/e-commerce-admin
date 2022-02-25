@@ -26,4 +26,61 @@ export const members = [
     img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png',
   },
 
-]
+];
+
+export const transactions = [
+  {
+    customer: {
+      name: 'Jack London',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '12 Feb 2022',
+    amount: 1345.50,
+    status: 'Approved'
+  },
+  {
+    customer: {
+      name: 'Tom Hanks',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '11 Feb 2022',
+    amount: 6742.70,
+    status: 'Rejected'
+  },
+  {
+    customer: {
+      name: 'Brad Pitt',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '10 Feb 2022',
+    amount: 951.00,
+    status: 'Approved'
+  },
+  {
+    customer: {
+      name: 'Mikhail Lomonosovn',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '10 Feb 2022',
+    amount: 2225.50,
+    status: 'Rejected'
+  },
+  {
+    customer: {
+      name: 'George Washington',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '08 Feb 2022',
+    amount: 357.50,
+    status: 'Pending'
+  },
+  {
+    customer: {
+      name: 'J.K.Rowling',
+      img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
+    },
+    date: '05 Feb 2022',
+    amount: 545.50,
+    status: 'Approved'
+  },
+];
