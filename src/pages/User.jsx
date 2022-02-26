@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { userRows } from '../data';
 import { Button } from '@mui/material';
-import { CalendarTodayOutlined, LocationOnOutlined, MailOutline, PersonOutline, PhoneAndroid } from '@mui/icons-material';
+import { CalendarTodayOutlined, LocationOnOutlined, MailOutline, PersonOutline, PhoneAndroid, Upload } from '@mui/icons-material';
 
 const Container = styled.div`
   flex: 4;
@@ -131,17 +131,24 @@ const User = () => {
       </UserContainer>
 
       <UpdateContainer>
-        <Title>Edit</Title>
-        <Label>Username</Label>
-        <Input type='text' />
-        <Label>Full name</Label>
-        <Input type='text' />
-        <Label>Email</Label>
-        <Input type='email' />
-        <Label>Phone</Label>
-        <Input type='tel' />
-        <Label>Adress</Label>
-        <Input type='text' />
+        <EditLeft>
+            <Title>Edit</Title>
+            <Label>Username</Label>
+            <Input type='text' />
+            <Label>Full name</Label>
+            <Input type='text' />
+            <Label>Email</Label>
+            <Input type='email' />
+            <Label>Phone</Label>
+            <Input type='tel' />
+            <Label>Adress</Label>
+            <Input type='text' />
+        </EditLeft>
+        <EditRight>
+          <Image src='' />
+          <Upload />
+          <Button>Update</Button>
+        </EditRight>
       </UpdateContainer>
     </Container>
   )
