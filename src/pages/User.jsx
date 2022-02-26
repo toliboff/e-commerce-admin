@@ -75,6 +75,10 @@ const Data = styled.span`
   margin-left: 10px;
 `;
 
+const UpdateContainer= styled.div``;
+const Label = styled.label``;
+const Input = styled.input``;
+
 const User = () => {
   const location = useLocation();
   // User {location.pathname.split('/')[2]}
@@ -125,6 +129,20 @@ const User = () => {
           Edit user info
         </EditUserInfo>
       </UserContainer>
+
+      <UpdateContainer>
+        <Title>Edit</Title>
+        <Label>Username</Label>
+        <Input type='text' />
+        <Label>Full name</Label>
+        <Input type='text' />
+        <Label>Email</Label>
+        <Input type='email' />
+        <Label>Phone</Label>
+        <Input type='tel' />
+        <Label>Adress</Label>
+        <Input type='text' />
+      </UpdateContainer>
     </Container>
   )
 }
