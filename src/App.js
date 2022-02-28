@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import UserList from "./pages/UserList";
 import User from "./pages/User";
+import NewUser from "./pages/NewUser";
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element = {<Home />} />
+            <Route path='/newUser' element = {<NewUser />} />
             <Route path='/users' element = {<UserList />} />
             <Route path='/user/:userId' element = {<User />} />
           </Routes>
