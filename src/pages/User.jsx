@@ -15,7 +15,8 @@ const Top = styled.div`
   justify-content: space-between;
 `;
 
-const Title =styled.h2``;
+const Title =styled.h2`
+`;
 
 const UserContainer = styled.div`
   display: flex;
@@ -29,12 +30,7 @@ const UserInfo = styled.div`
   box-shadow: 0 0 15px -5px #aaa;
   padding: 10px;
 `;
-const EditUserInfo = styled.div`
-  flex: 3;
-  border-radius: 5px;
-  box-shadow: 0 0 15px -5px #aaa;
-  padding: 10px;
-`;
+
 
 const FlexContainer = styled.div`
   display: flex;
@@ -75,9 +71,50 @@ const Data = styled.span`
   margin-left: 10px;
 `;
 
-const UpdateContainer= styled.div``;
+
+const UpdateContainer= styled.div`
+  flex: 3;
+  border-radius: 5px;
+  box-shadow: 0 0 15px -5px #aaa;
+  padding: 10px;
+`;
+
+const UserForm = styled.div`
+  display: flex;
+  gap: 25px;
+`;
+const EditLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+const EditRight = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  `;
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+const ProfileImage = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 9px 5px #ccc;
+`;
 const Label = styled.label``;
-const Input = styled.input``;
+const Input = styled.input`
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin: 10px 0 20px;
+  outline: none;
+  font-size: 16px;
+  display: ${props=>props.type==='file'?'none':'block'}
+`;
 
 const User = () => {
   const location = useLocation();
@@ -125,31 +162,34 @@ const User = () => {
             <Data>CityName | CountryName</Data>
           </Details>
         </UserInfo>
-        <EditUserInfo>
-          Edit user info
-        </EditUserInfo>
-      </UserContainer>
 
-      <UpdateContainer>
-        <EditLeft>
-            <Title>Edit</Title>
-            <Label>Username</Label>
-            <Input type='text' />
-            <Label>Full name</Label>
-            <Input type='text' />
-            <Label>Email</Label>
-            <Input type='email' />
-            <Label>Phone</Label>
-            <Input type='tel' />
-            <Label>Adress</Label>
-            <Input type='text' />
-        </EditLeft>
-        <EditRight>
-          <Image src='' />
-          <Upload />
-          <Button>Update</Button>
-        </EditRight>
-      </UpdateContainer>
+        <UpdateContainer>
+             <Title>Edit</Title>
+          <UserForm>
+            <EditLeft>
+              <Label>Username</Label>
+              <Input type='text' placeholder='jack007'/>
+              <Label>Full name</Label>
+              <Input type='text' placeholder='Jack London' />
+              <Label>Email</Label>
+              <Input type='email' placeholder='jack007@mail.com' />
+              <Label>Phone</Label>
+              <Input type='tel' placeholder='+1 123 456 78'/>
+              <Label>Adress</Label>
+              <Input type='text' placeholder='City name'/>
+            </EditLeft>
+            <EditRight>
+              <ImageContainer>
+                <ProfileImage src='https://iheartcraftythings.com/wp-content/uploads/2021/04/Man-DRAWING-%E2%80%93-STEP-10.jpg' />
+                <Label htmlFor='file'><Upload sx={{cursor: 'pointer', color: 'gray', fontSize: '3rem'}}/></Label>
+                <Input type='file' id='file'/>
+              </ImageContainer>
+              
+              <Button variant='contained' color='success' sx={{alignSelf: 'flex-end', margin:'10px'}}>Update</Button>
+            </EditRight>
+          </UserForm>
+        </UpdateContainer>  
+      </UserContainer>
     </Container>
   )
 }
