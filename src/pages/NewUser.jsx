@@ -7,9 +7,17 @@ const Container = styled.div`
 
 const Title = styled.h2``;
 const  Form = styled.form``;
-const  InputContainer = styled.div``;
-const  Left = styled.div``;
-const  Right = styled.div``;
+const  InputContainer = styled.div`
+  display: flex;
+`;
+const  Left = styled.div`
+display: flex;
+flex-direction: column;
+`;
+const  Right = styled.div`
+display: flex;
+flex-direction: column;
+`;
 const  Label = styled.label``;
 const  Input = styled.input``;
 const NewUser = () => {
