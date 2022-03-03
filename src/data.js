@@ -108,3 +108,27 @@ export const userRows = [
     transaction: 1250
    }, 
 ];
+
+export const products = [
+  { id: 1,
+    name: 'Coffe Cup',
+    image: 'https://assets.crowdspring.com/marketing/landing-page/crowdspring-product-design-phase1-1120.jpg',
+    stock: 246,
+    status: 'active',
+    price: 150
+   }, 
+  { id: 2,
+    name: 'Coffe Cup',
+    image: 'https://assets.crowdspring.com/marketing/landing-page/crowdspring-product-design-phase1-1120.jpg',
+    stock: 246,
+    status: 'active',
+    price: 120
+   }, 
+  { id: 3,
+    name: 'Coffe Cup',
+    image: 'https://assets.crowdspring.com/marketing/landing-page/crowdspring-product-design-phase1-1120.jpg',
+    stock: 246,
+    status: 'active',
+    price: 50
+   }, 
+];
