@@ -1,4 +1,5 @@
-import { Button } from '@mui/material';
+import { Upload } from '@mui/icons-material';
+import { Button, MenuItem, Select, TextField } from '@mui/material';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -64,6 +65,7 @@ const ProductStats = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 15px;
 `;
 const ProductDetails = styled.div`
   width: 50%;
@@ -83,6 +85,15 @@ const ProductBottom = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 15px -5px #aaa;
 `;
+
+const ProductForm = styled.form``;
+const EditLeft = styled.form``;
+const Label = styled.label``;
+const EditRight = styled.div``;
+const ImageContainer = styled.div``;
+const ProductImg = styled.img``;
+const FileInput = styled.input``;
+
 
 const Product = () => {
   return (
@@ -115,11 +126,49 @@ const Product = () => {
                 <ProductKey>sales:</ProductKey>
                 <ProductValue>553</ProductValue>
               </ProductDetails>
+              <ProductDetails>
+                <ProductKey>active:</ProductKey>
+                <ProductValue>yes</ProductValue>
+              </ProductDetails>
+              <ProductDetails>
+                <ProductKey>in stock:</ProductKey>
+                <ProductValue>no</ProductValue>
+              </ProductDetails>
             </ProductStats>
           </ProductTopRight>
         </ProductTop>
         <ProductBottom>
-          Bottom
+        <ProductForm>
+          <EditLeft>
+              <Label>Product name</Label>
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <Label>In Stock</Label>
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <Label>Active</Label>
+              <Select
+          value={"age"}
+          onChange={"handleChange"}
+          displayEmpty
+          inputProps={{ 'aria-label': 'Without label' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+            </EditLeft>
+            <EditRight>
+              <ImageContainer>
+                <ProductImg src='https://iheartcraftythings.com/wp-content/uploads/2021/04/Man-DRAWING-%E2%80%93-STEP-10.jpg' />
+                <Label htmlFor='file'><Upload sx={{cursor: 'pointer', color: 'gray', fontSize: '3rem'}}/></Label>
+                <FileInput type='file' id='file'/>
+              </ImageContainer>
+              
+              <Button variant='contained' color='success' sx={{alignSelf: 'flex-end', margin:'10px'}}>Update</Button>
+            </EditRight>
+          </ProductForm>
         </ProductBottom>
       </ProductContainer>
    
