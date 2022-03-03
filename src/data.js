@@ -132,3 +132,10 @@ export const products = [
     price: 50
    }, 
 ];
+
+
+export const productData = [
+  {name: 'Jan', sales: 600, },
+  {name: 'Feb', sales: 400, },
+  {name: 'Mar', sales: 900, },
+];

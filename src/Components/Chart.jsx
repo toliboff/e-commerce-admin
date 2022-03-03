@@ -4,9 +4,7 @@ import { LineChart, Line, CartesianGrid, XAxis, Tooltip, YAxis, ResponsiveContai
 
 
 const Container = styled.div`
-  box-shadow: 0 0 15px -5px #aaa;
-  border-radius: 10px;
-  padding: 15px; 
+  
 `;
 
 const Title = styled.h2`
@@ -14,16 +12,16 @@ const Title = styled.h2`
   font-size: 20px;
 `;
 
-const Chart = ({data, dataKey, columnName}) => {
+const Chart = ({data, dataKey, columnName, title, grid, yaxis}) => {
   return (
     <Container>
-      <Title>Active User Details</Title>
+      <Title>{title}</Title>
       <ResponsiveContainer width="100%" aspect={ 4/ 1}>
         <LineChart width={1000} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 20 }}>
         <Line type="monotone" dataKey={dataKey} stroke="#8884d8" />
-        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        {grid && <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />}
         <XAxis dataKey={columnName} />
-        <YAxis />
+        {yaxis && <YAxis /> }
         <Tooltip /> 
       </LineChart>
       </ResponsiveContainer>

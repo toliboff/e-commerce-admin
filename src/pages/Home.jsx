@@ -11,6 +11,12 @@ const Container = styled.div`
   padding: 10px;
 `;
 
+const ChartContainer = styled.div`
+  box-shadow: 0 0 15px -5px #aaa;
+  border-radius: 10px;
+  padding: 15px;
+`;
+
 const Widgets = styled.div`
   display: flex;
   gap: 15px;
@@ -20,7 +26,10 @@ const Home = () => {
   return (
     <Container>
       <FeaturedInfo />
-      <Chart data={userData} dataKey='uv' columnName='name' />
+      <ChartContainer>
+        <Chart data={userData} dataKey='uv' columnName='name' grid/>
+      </ChartContainer>
+      
       <Widgets>
         <NewMembers members={members}/>
         <LatestTransactions transactions={transactions}/>
