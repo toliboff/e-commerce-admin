@@ -14,19 +14,21 @@ const Container = styled.div`
 function App() {
   return (
     <div className="App">
+       <Router>
       <Topbar />
       <Container>
         <Sidebar />
-        <Router>
+       
           <Routes>
             <Route path='/' element = {<Home />} />
             <Route path='/newUser' element = {<NewUser />} />
             <Route path='/users' element = {<UserList />} />
             <Route path='/user/:userId' element = {<User />} />
           </Routes>
-        </Router>
+       
     
       </Container>
+      </Router>
     </div>
   );
 }

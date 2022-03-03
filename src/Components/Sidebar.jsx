@@ -1,5 +1,6 @@
 import { AttachMoneyOutlined, ForumOutlined, LineStyle, MailOutline, MessageOutlined, PersonOutline, ReportOutlined, SignalCellularAltOutlined, StorefrontOutlined, Timeline, TrendingUp, WorkOutlineOutlined } from '@mui/icons-material';
 import React from 'react'
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const SidebarWrapper  = styled.div`
@@ -31,7 +32,9 @@ const Sidebar = () => {
       <SidebarMenu>
         <Title>Dashboard</Title>
         <SidebarList>
-          <SidebarItem> <LineStyle /> Home </SidebarItem>
+          <Link to='/'>
+            <SidebarItem> <LineStyle /> Home </SidebarItem>
+          </Link>
         </SidebarList>
         <SidebarList>
           <SidebarItem> <Timeline /> Analytics </SidebarItem>
@@ -44,7 +47,9 @@ const Sidebar = () => {
       <SidebarMenu>
         <Title>Quick Menu</Title>
         <SidebarList>
-          <SidebarItem> <PersonOutline /> Users </SidebarItem>
+          <Link to='/users'>
+            <SidebarItem> <PersonOutline /> Users </SidebarItem>
+          </Link>
         </SidebarList>
         <SidebarList>
           <SidebarItem> <StorefrontOutlined /> Products </SidebarItem>

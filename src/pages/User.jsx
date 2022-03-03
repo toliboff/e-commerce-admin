@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { userRows } from '../data';
 import { Button } from '@mui/material';
 import { CalendarTodayOutlined, LocationOnOutlined, MailOutline, PersonOutline, PhoneAndroid, Upload } from '@mui/icons-material';
@@ -123,9 +124,11 @@ const User = () => {
     <Container>
       <Top>
         <Title>Edit User</Title>
+        <Link to='/newUser'>
         <Button variant='contained'>
           Create
         </Button>
+        </Link>
       </Top>
       <UserContainer>
         <UserInfo>
