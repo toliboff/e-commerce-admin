@@ -52,7 +52,9 @@ const Sidebar = () => {
           </Link>
         </SidebarList>
         <SidebarList>
-          <SidebarItem> <StorefrontOutlined /> Products </SidebarItem>
+          <Link to='/products'>
+            <SidebarItem> <StorefrontOutlined /> Products </SidebarItem>
+          </Link>
         </SidebarList>
         <SidebarList>
           <SidebarItem> <AttachMoneyOutlined /> Transactions </SidebarItem>
