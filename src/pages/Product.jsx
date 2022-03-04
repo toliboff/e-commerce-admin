@@ -129,7 +129,7 @@ const handleActiveStatus = (event) => {
     <Container>
     <Top>
       <Title>Product Name</Title>
-      <Link to='/newUser'>
+      <Link to='/newProduct'>
       <Button variant='contained'>
         Create
       </Button>
