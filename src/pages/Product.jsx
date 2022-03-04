@@ -1,6 +1,6 @@
 import { Upload } from '@mui/icons-material';
 import { Button, MenuItem, Select, TextField } from '@mui/material';
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Chart from '../Components/Chart';
@@ -86,16 +86,45 @@ const ProductBottom = styled.div`
   box-shadow: 0 0 15px -5px #aaa;
 `;
 
-const ProductForm = styled.form``;
-const EditLeft = styled.form``;
-const Label = styled.label``;
-const EditRight = styled.div``;
-const ImageContainer = styled.div``;
-const ProductImg = styled.img``;
-const FileInput = styled.input``;
+const ProductForm = styled.form`
+  display: flex;
+  justify-content: space-between;
+`;
+const EditLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Label = styled.label`
+  margin: 25px 0 5px;
+`;
+const EditRight = styled.div`
+  padding: 15px;
+`;
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const ProductImg = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+`;
+const FileInput = styled.input`
+  display: none;
+`;
 
 
 const Product = () => {
+const [active, setActive] =useState('')
+const [stock, setStock] =useState('')
+
+const handleStockStatus = (event) => {
+  setStock(event.target.value)
+}
+
+const handleActiveStatus = (event) => {
+  setActive(event.target.value)
+}
   return (
     <Container>
     <Top>
@@ -141,23 +170,28 @@ const Product = () => {
         <ProductForm>
           <EditLeft>
               <Label>Product name</Label>
-              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField id="standard-basic" variant="standard" placeholder='Coffee Cup'/>
               <Label>In Stock</Label>
-              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <Select
+                value={stock}
+                onChange={handleStockStatus}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+                >
+                <MenuItem value='Yes'>Yes</MenuItem>
+                <MenuItem value='No'>No</MenuItem>
+              </Select>
+
               <Label>Active</Label>
               <Select
-          value={"age"}
-          onChange={"handleChange"}
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
+                value={active}
+                onChange={handleActiveStatus}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+                >
+                <MenuItem value='Yes'>Yes</MenuItem>
+                <MenuItem value='No'>No</MenuItem>
+              </Select>
             </EditLeft>
             <EditRight>
               <ImageContainer>
@@ -166,7 +200,7 @@ const Product = () => {
                 <FileInput type='file' id='file'/>
               </ImageContainer>
               
-              <Button variant='contained' color='success' sx={{alignSelf: 'flex-end', margin:'10px'}}>Update</Button>
+              <Button variant='contained' color='success' sx={{alignSelf: 'flex-end', margin:'10px', width: '90%', marginTop: '20px'}}>Update</Button>
             </EditRight>
           </ProductForm>
         </ProductBottom>
