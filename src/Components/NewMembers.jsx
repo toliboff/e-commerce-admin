@@ -1,6 +1,8 @@
 import { Visibility } from '@mui/icons-material';
-import React from 'react'
+import { setUseProxies } from 'immer';
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import { userRequest } from '../requestMethods';
 
 
 const Container = styled.div`
@@ -48,11 +50,25 @@ const DisplayButton = styled.button`
 `;
 
 const NewMembers = ({members}) => {
+  const [newMembers, setNewMembers] = useState([]);
+
+  useEffect(()=>{
+    const getMembers = async () => {
+      try{
+        const res = await userRequest.get('users/?new=true')
+        setUseProxies(res.data)
+        console.log('NewMembers:', res.data);
+      } catch {
+        console.log('Something went wrong while fetching new users')
+      }
+    };
+    getMembers();
+  }, [])
   return (
     <Container>
       <Title>New Joined Members</Title>
       {
-        members.map((member) => <MemberWrapper>
+        newMembers.map((member) => <MemberWrapper>
         <MemberImage src="https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png"/>
         <MemberInfo>
           <MemberName>{member.name}</MemberName>
