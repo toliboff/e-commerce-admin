@@ -1,6 +1,7 @@
 import { Visibility } from '@mui/icons-material';
 import { setUseProxies } from 'immer';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { userRequest } from '../requestMethods';
 
@@ -55,8 +56,8 @@ const NewMembers = ({members}) => {
   useEffect(()=>{
     const getMembers = async () => {
       try{
-        const res = await userRequest.get('users/?new=true')
-        setUseProxies(res.data)
+        const res = await userRequest.get('/users?new=true')
+        setNewMembers(res.data)
         console.log('NewMembers:', res.data);
       } catch {
         console.log('Something went wrong while fetching new users')
@@ -68,13 +69,15 @@ const NewMembers = ({members}) => {
     <Container>
       <Title>New Joined Members</Title>
       {
-        newMembers.map((member) => <MemberWrapper>
-        <MemberImage src="https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png"/>
+        newMembers.map((member) => <MemberWrapper key={member._id}>
+        <MemberImage src={ member.image || "https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png"} />
         <MemberInfo>
-          <MemberName>{member.name}</MemberName>
+          <MemberName>{member.username}</MemberName>
           <MemberPosition>{member.position}</MemberPosition>
         </MemberInfo>
-        <DisplayButton><Visibility /> Display</DisplayButton>
+        <Link to={`/user/${member._id}`}>
+          <DisplayButton><Visibility /> Display</DisplayButton>
+        </Link>
       </MemberWrapper>)
       }
       

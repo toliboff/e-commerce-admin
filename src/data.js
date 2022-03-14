@@ -29,7 +29,7 @@ export const members = [
 ];
 
 export const transactions = [
-  {
+  { id: 1,
     customer: {
       name: 'Jack London',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
@@ -39,6 +39,7 @@ export const transactions = [
     status: 'Approved'
   },
   {
+    id: 2,
     customer: {
       name: 'Tom Hanks',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
@@ -48,6 +49,7 @@ export const transactions = [
     status: 'Rejected'
   },
   {
+    id: 3,
     customer: {
       name: 'Brad Pitt',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
@@ -57,6 +59,7 @@ export const transactions = [
     status: 'Approved'
   },
   {
+    id: 4,
     customer: {
       name: 'Mikhail Lomonosovn',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
@@ -66,6 +69,7 @@ export const transactions = [
     status: 'Rejected'
   },
   {
+    id: 5,
     customer: {
       name: 'George Washington',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'
@@ -75,6 +79,7 @@ export const transactions = [
     status: 'Pending'
   },
   {
+    id: 6,
     customer: {
       name: 'J.K.Rowling',
       img: 'https://pickaface.net/gallery/avatar/unr_coder_181014_0458_34tnm.png'

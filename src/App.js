@@ -9,12 +9,14 @@ import NewUser from "./pages/NewUser";
 import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
 import NewProduct from "./pages/NewProduct";
+import Login from "./pages/Login";
 
 const Container = styled.div`
   display: flex;
 `;
 
 function App() {
+  
   return (
     <div className="App">
        <Router>
@@ -24,6 +26,7 @@ function App() {
        
           <Routes>
             <Route path='/' element = {<Home />} />
+            <Route path='/login' element = {<Login />} />
             <Route path='/newUser' element = {<NewUser />} />
             <Route path='/users' element = {<UserList />} />
             <Route path='/user/:userId' element = {<User />} />
