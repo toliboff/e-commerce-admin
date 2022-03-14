@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper }  from '@mui/material';
+import { userRequest } from '../requestMethods';
+import {format} from 'timeago.js';
 
 const Container = styled.div`
   box-shadow: 0 0 15px -5px #aaa;
@@ -30,7 +32,21 @@ const TransactionStatus = styled.span`
   color: ${({status})=> statusColor[status]}
 `;
 
-const LatestTransactions = ({transactions}) => {
+const LatestTransactions = () => {
+  const [transactions, setsetTransactions] = useState([]);
+  useEffect(()=>{
+    const getOrders = async()=>{
+      try{
+        const res = await userRequest.get('orders');
+        setsetTransactions(res.data);
+      } catch {
+        console.log('Failed to fetch orders');
+      }
+
+    }
+    getOrders();
+  },[])
+    
   return (
     <Container>
       <Title>Latest Transactions</Title>
@@ -46,12 +62,12 @@ const LatestTransactions = ({transactions}) => {
           </TableHead>
           <TableBody>
             {transactions.map((transaction) =>
-            <TableRow>
+            <TableRow key={transaction._id}>
               <TableCell sx={{display:'flex', alignItems:'center', gap: '5px' }}>
-                <CustomerImage src={transaction.customer.img} />
-                {transaction.customer.name}
+                
+                {transaction.userId}
               </TableCell>
-              <TableCell>{transaction.date}</TableCell>
+              <TableCell>{format(transaction.createdAt)}</TableCell>
               <TableCell>${transaction.amount}</TableCell>
               <TableCell>
                 <TransactionStatus status={transaction.status}>
